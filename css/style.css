@@ -1,0 +1,83 @@
+/* Estilo para el botón verde */
+.boton-verde {
+    background-color: #55c013; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interior del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Cambio de estilo al pasar el cursor sobre el botón */
+.boton-verde:hover {
+    background-color: darkgreen; /* Cambiar el color de fondo al pasar el cursor */
+}
+
+.boton-azul {
+    background-color: #2196F3; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interior del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Cambio de estilo al pasar el cursor sobre el botón */
+.boton-azul:hover {
+    background-color: darkblue; /* Cambiar el color de fondo al pasar el cursor */
+}
+
+.boton-rojo {
+    background-color: red; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interior del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Cambio de estilo al pasar el cursor sobre el botón */
+.boton-rojo:hover {
+    background-color: darkred; /* Cambiar el color de fondo al pasar el cursor */
+}
+
+/* Estilo para las cajas de texto */
+.caja-de-texto {
+    width: 200px; /* Ancho de la caja de texto (ajústalo según tus necesidades) */
+    height: 30px; /* Altura de la caja de texto (ajústalo según tus necesidades) */
+    margin-bottom: 10px; /* Separación hacia abajo */
+    padding: 5px; /* Espaciado interior de la caja de texto */
+    font-size: 16px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde con color gris claro */
+    border-radius: 5px; /* Borde redondeado */
+}
+
+.centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura del 100% de la ventana gráfica */
+}
+
+.contenido {
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+/* Estilo para ocultar elementos */
+.oculto {
+    display: none;
+}
+
+.header{
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.centerDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
