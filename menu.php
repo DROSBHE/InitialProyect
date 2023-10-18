@@ -18,7 +18,7 @@
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
             <button type="submit" class="boton-verde" >
-                <a href="almacen.php" style="color:white">Consultar almacen</a>
+                <a href="logsuper.html" style="color:white">Consultar almacen</a>
             </button>
 
             <button type="submit" class="boton-verde" >
@@ -30,11 +30,15 @@
             </button>
 
             <button type="submit" class="boton-verde" >
-                <a href="modifyInfProduct.php" style="color:white">Modificar informacion de productos</a>
+                <a href="logsuper.html" style="color:white">Modificar informacion de productos</a>
             </button>
 
             <button type="submit" class="boton-verde" >
                 <a href="searchProduct.php" style="color:white">Buscar Productos</a>
+            </button>
+
+            <button type="submit" class="boton-verde" >
+                <a href="vewproduct.php" style="color:white">Ver productos</a>
             </button>
 
             <div><h1 style="color:white;">Beatriz Ball</h1></div>
