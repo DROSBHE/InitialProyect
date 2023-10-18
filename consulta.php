@@ -1,75 +1,50 @@
-<?php
-
-include("conn.php");
-
-?>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
-    <link rel="stylesheet" href="css/registrados.css">
-
-
-
-
-    
+    <title>Tabla de almacen</title>
 </head>
 <body>
-    
+    <h2>Tabla de Datos</h2>
+    <table border="1">
+        <tr>
+            <th>Codigo</th>
+            <th>DESCRIPCION</th>
+            <th>CANTIDAD</th>
+            <th>ESTADO</th>
+        </tr>
+        <?php
+        // Conexión a la base de datos (reemplaza con tus propios datos)
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "sistema";
 
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-<div class="fondo-box">
-        <div class= "centrar">
-<p>LISTA DE USUARIOS REGISTRADOS</p>
-<!------tabla en donde se muestra los datos de la base de datos seleccionada con los campos------>
-<table class="tabla">
-<thead>
-<tr>
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
 
-<th scope="col">codigo del producto</th>
-<th scope="col">descripcion</th>
-<th scope="col">cantidad</th>
-<th scope="col">estado</th>
+        // Consulta SQL para seleccionar datos de la tabla
+        $sql = "SELECT codigo_producto, descripcion_producto, cantidad_producto, estado_producto FROM almacen";
 
-</tr>
-</thead>
-<tbody>
-  
+        $result = $conn->query($sql);
 
-<!---consulta dos datos de la base de datos y hace el conteo de los usuarios---->
-<?php 
-$busqueda=mysqli_query($conn,"SELECT * FROM almacen "); 
-            $numero = mysqli_num_rows($busqueda); ?>
-            <h5 class="card-tittle">Resultados (<?php echo $numero; ?>)</h5>
-            <div class="container_card">
-                <?php 
-                $num = '0';
-                while ($resultado = mysqli_fetch_assoc($busqueda)){
-                  $num++;
-                  ?>
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["codigo_producto"] . "</td>";
+                echo "<td>" . $row["descripcion_producto"] . "</td>";
+                echo "<td>" . $row["cantidad_producto"] . "</td>";
+                echo "<td>" . $row["estado_producto"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "No se encontraron resultados.";
+        }
 
-
-
-    <!----campos que contiene la tabla de la base de datos------>
-<tr>
-<th scope="row"><?php echo $num; ?></th>
-<td><?php echo $resultado["codigo_producto"]; ?></td>
-<td><?php echo $resultado["descripcion_producto"]; ?></td>
-<td><?php echo $resultado["cantidad_producto"]; ?></td>
-<td><?php echo $resultado["estado_producto"]; ?></td>
-
-</tr>    
-
-                <?php } ?>    
-
-
-</tbody>
-</table>
-
-         </div>
-
-
-         </body>
-         </html>
+        $conn->close();
+        ?>
+    </table>
+</body>
+</html>
